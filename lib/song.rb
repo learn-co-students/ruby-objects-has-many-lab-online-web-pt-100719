@@ -14,7 +14,7 @@ class Song
   end 
   
   def save
-    @@all << @song
+    @@all << self 
   end 
   
 #binding.pry
