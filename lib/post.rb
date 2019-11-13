@@ -1,3 +1,4 @@
+require 'pry'
 class Post 
   
   attr_accessor :title, :author
@@ -9,19 +10,21 @@ class Post
     @title = title
     @@all  << self
   end 
-  
+
   def self.all 
     @@all
   end 
-  
-  
+
   def add_post(post)
     @posts << post
     posts.author = self
   end 
   
-  def author_name (name = nil)
-    self.author.name 
+  def author_name 
+    if self.author
+      self.author.name 
+    else
+      nil 
+    end 
   end 
-  
 end 
